@@ -6,6 +6,9 @@ declare var tmpl: any;
 module csharptube {
     export class Database {
         private _index: Index;
+        private _videos: Array<any>;
+        private _pages: Array<Array<any>>;
+
         constructor(videos: Array<any>) {
             this._index = new Index(videos);
 
