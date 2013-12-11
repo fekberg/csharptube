@@ -1,0 +1,1 @@
+[![Build Status](http://ci.buildstarted.com:8080/buildStatus/icon?job=csharptube%20test)](http://ci.buildstarted.com:8080/job/csharptube%20test/)
