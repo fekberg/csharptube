@@ -8,11 +8,33 @@ module csharptube {
         private _index: Index;
         private _videos: Array<any>;
         private _pages: Array<Array<any>>;
+        private _tags: { [name: string]: number };
 
         constructor(videos: Array<any>) {
             this._index = new Index(videos);
+            this._tags = {};
+            for (var i = 0; i < videos.length; i++) {
+                if (videos[i].Tags) {
+                    for (var t = 0; t < videos[i].Tags.length; t++) {
+                        var tag: string = <string>videos[i].Tags[t];
+                        if (!this._tags[tag]) {
+                            this._tags[tag] = 0;
+                        }
+                        this._tags[tag] += 1;
+                    }
+                }
+            }
 
+            //sort by tags
+
+            this.InitializeTags();
             this.WireUpUI();
+        }
+
+        private InitializeTags(): void {
+            var tags = Object.keys(this._tags).sort((a, b) => { return -(this._tags[a] - this._tags[b]); });
+            var template = tmpl("taglist", { Tags: tags });
+            $("#sidebar").append(template);
         }
 
         private WireUpUI(): void {
@@ -59,12 +81,12 @@ module csharptube {
         }
 
         private ClearMain(): void {
-            $("#main").children().remove();
+            $("#contents").children().remove();
         }
 
         private Watch(video: Video): void {
             this.ClearMain();
-            $("#main").append(tmpl("watch", video));
+            $("#contents").append(tmpl("watch", video));
             player.play(video.Video);
         }
 
@@ -72,13 +94,13 @@ module csharptube {
             var results = Enumerable.from(videos).reverse().take(30).toArray();
             this.ClearMain();
             var template = tmpl("homeresults", { Results: results });
-            $("#main").append(template);
+            $("#contents").append(template);
         }
 
         private ShowResults(terms: string, results: any): void {
             var template = tmpl("searchresults", { Results: results, Query: terms });
             this.ClearMain();
-            $("#main").append(template);
+            $("#contents").append(template);
         }
 
         private Search(terms: string): Array<Video> {
@@ -129,7 +151,7 @@ module csharptube {
         public score: number;
     }
 
-    export class Video {
+    class Video {
         public Title: string;
         public Description: string;
         public Author: string;

@@ -5,9 +5,32 @@ var csharptube;
     var Database = (function () {
         function Database(videos) {
             this._index = new Index(videos);
+            this._tags = {};
+            for (var i = 0; i < videos.length; i++) {
+                if (videos[i].Tags) {
+                    for (var t = 0; t < videos[i].Tags.length; t++) {
+                        var tag = videos[i].Tags[t];
+                        if (!this._tags[tag]) {
+                            this._tags[tag] = 0;
+                        }
+                        this._tags[tag] += 1;
+                    }
+                }
+            }
 
+            //sort by tags
+            this.InitializeTags();
             this.WireUpUI();
         }
+        Database.prototype.InitializeTags = function () {
+            var _this = this;
+            var tags = Object.keys(this._tags).sort(function (a, b) {
+                return -(_this._tags[a] - _this._tags[b]);
+            });
+            var template = tmpl("taglist", { Tags: tags });
+            $("#sidebar").append(template);
+        };
+
         Database.prototype.WireUpUI = function () {
             var _this = this;
             window.onhashchange = function () {
@@ -53,12 +76,12 @@ var csharptube;
         };
 
         Database.prototype.ClearMain = function () {
-            $("#main").children().remove();
+            $("#contents").children().remove();
         };
 
         Database.prototype.Watch = function (video) {
             this.ClearMain();
-            $("#main").append(tmpl("watch", video));
+            $("#contents").append(tmpl("watch", video));
             player.play(video.Video);
         };
 
@@ -66,13 +89,13 @@ var csharptube;
             var results = Enumerable.from(videos).reverse().take(30).toArray();
             this.ClearMain();
             var template = tmpl("homeresults", { Results: results });
-            $("#main").append(template);
+            $("#contents").append(template);
         };
 
         Database.prototype.ShowResults = function (terms, results) {
             var template = tmpl("searchresults", { Results: results, Query: terms });
             this.ClearMain();
-            $("#main").append(template);
+            $("#contents").append(template);
         };
 
         Database.prototype.Search = function (terms) {
@@ -131,6 +154,5 @@ var csharptube;
         }
         return Video;
     })();
-    csharptube.Video = Video;
 })(csharptube || (csharptube = {}));
 //# sourceMappingURL=controller.js.map

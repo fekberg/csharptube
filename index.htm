@@ -81,6 +81,14 @@
             </div>
         </div>
     </script>
+    <script type="resig/html" id="taglist">
+        <h3>Popular Tags</h3>
+        <ul id="tags">
+            <% for(var i in Tags) { %>
+            <li><a href='#/tags/<%=Tags[i]%>'><%=Tags[i]%></a></li>
+            <% } %>
+        </ul>
+    </script>
 </head>
 <body>
     <header>
@@ -89,11 +97,13 @@
                 <input type='text' name='q' value='' id='q' />
                 <input type='submit' value='Search' id="search" />
             </div>
-            <h1><a href='/'>c# tube</a></h1>
+            <h1><a href='#'>c# tube</a></h1>
             <p>Gathering the best c# videos from the web.</p>
         </div>
     </header>
     <div id='main'>
+        <div id="sidebar"></div>
+        <div id="contents"></div>
     </div>
     <footer>
         <div><a href="#">home</a> | <a href="/pages/faq">faq</a> | <a href="/pages/about">about</a> | <a href="http://groups.google.com/group/csharptube">discussion</a> | <a href="http://jabbr.net/#/rooms/csharptube">chat on jabbr</a> <!--| <a href="/home/rss"><span>rss</span> <img src="/content/rss.png" style="border: none;" /></a>--></div>

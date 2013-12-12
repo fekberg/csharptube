@@ -25,15 +25,10 @@
     <Content Include="content\edit.png" />
     <Content Include="content\fade.png" />
     <Content Include="content\favicon.png" />
-    <Content Include="content\mdd_ajax_loader.gif" />
-    <Content Include="content\mdd_gripper.png" />
-    <Content Include="content\mdd_modal_background.png" />
-    <Content Include="content\mdd_styles.css" />
-    <Content Include="content\mdd_toolbar.png" />
     <Content Include="content\rss.png" />
     <Content Include="content\save.png" />
     <Content Include="content\sidebar.png" />
-    <Content Include="content\Site.css" />
+    <Content Include="content\site.css" />
     <Content Include="content\up-gray.png" />
     <Content Include="content\up.png" />
     <Content Include="content\youtube-sample.png" />
@@ -48,16 +43,6 @@
     <Content Include="scripts\markdown.sanitizer.js" />
     <Content Include="scripts\resig.js" />
     <Content Include="scripts\watch.js" />
-    <Content Include="web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\controller.ts" />

@@ -436,3 +436,9 @@ div.tabs div a.active {
     padding: 0 1em;
     padding-top: 3px;
 }
+
+#sidebar {
+    float: right;
+    width: 200px;
+    margin-left: 2em;
+}
