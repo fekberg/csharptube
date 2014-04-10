@@ -53,6 +53,7 @@ var csharptube;
         };
 
         Database.prototype.Navigate = function (hash) {
+            $("#sidebar").show();
             if (hash) {
                 var parts = hash.split('/');
                 switch (parts[1]) {
@@ -77,6 +78,7 @@ var csharptube;
 
         Database.prototype.ClearMain = function () {
             $("#contents").children().remove();
+            $("#sidebar").show();
         };
 
         Database.prototype.Watch = function (video) {
@@ -92,12 +94,14 @@ var csharptube;
             this.ClearMain();
             var template = tmpl("homeresults", { Results: results });
             $("#contents").append(template);
+            $("#sidebar").show();
         };
 
         Database.prototype.ShowResults = function (terms, results) {
             var template = tmpl("searchresults", { Results: results, Query: terms });
             this.ClearMain();
             $("#contents").append(template);
+            $("#sidebar").show();
         };
 
         Database.prototype.Search = function (terms) {
@@ -110,6 +114,7 @@ var csharptube;
             }
 
             //skip and take for paging?
+            $("#sidebar").show();
             return results;
         };
         return Database;

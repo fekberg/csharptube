@@ -58,6 +58,7 @@ module csharptube {
         }
 
         private Navigate(hash: string): void {
+            $("#sidebar").show();
             if (hash) {
             var parts = hash.split('/');
                 switch (parts[1]) {
@@ -82,6 +83,7 @@ module csharptube {
 
         private ClearMain(): void {
             $("#contents").children().remove();
+            $("#sidebar").show();
         }
 
         private Watch(video: Video): void {
@@ -98,12 +100,14 @@ module csharptube {
             this.ClearMain();
             var template = tmpl("homeresults", { Results: results });
             $("#contents").append(template);
+            $("#sidebar").show();
         }
 
         private ShowResults(terms: string, results: any): void {
             var template = tmpl("searchresults", { Results: results, Query: terms });
             this.ClearMain();
             $("#contents").append(template);
+            $("#sidebar").show();
         }
 
         private Search(terms: string): Array<Video> {
@@ -117,6 +121,7 @@ module csharptube {
 
             //skip and take for paging?
 
+            $("#sidebar").show();
             return results;
         }
     }

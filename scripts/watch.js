@@ -38,6 +38,8 @@ var player = {
 
 player.play = function (url) {
 
+    $("#sidebar").hide();
+
     //extract id from url
 
     var domain = parseUri(url).host;
