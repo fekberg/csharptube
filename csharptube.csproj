@@ -9,7 +9,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <TypeScriptToolsVersion>0.9</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -19,19 +19,10 @@
   <ItemGroup>
     <Content Include="404.html" />
     <Content Include="content\c#.png" />
-    <Content Include="content\cancel.png" />
-    <Content Include="content\down-gray.png" />
-    <Content Include="content\down.png" />
-    <Content Include="content\edit.png" />
     <Content Include="content\fade.png" />
     <Content Include="content\favicon.png" />
     <Content Include="content\rss.png" />
-    <Content Include="content\save.png" />
-    <Content Include="content\sidebar.png" />
     <Content Include="content\site.css" />
-    <Content Include="content\up-gray.png" />
-    <Content Include="content\up.png" />
-    <Content Include="content\youtube-sample.png" />
     <Content Include="index.htm" />
     <Content Include="scripts\data.js" />
     <None Include="scripts\linq-vsdoc.js" />
@@ -43,9 +34,17 @@
     <Content Include="scripts\markdown.sanitizer.js" />
     <Content Include="scripts\resig.js" />
     <Content Include="scripts\watch.js" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\controller.ts" />
+    <TypeScriptCompile Include="scripts\Engines.ts" />
     <TypeScriptCompile Include="scripts\linq.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>

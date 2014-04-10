@@ -54,6 +54,7 @@ player.play = function (url) {
             }
             break;
         case "www.youtube.com":
+        case "youtube.com":
         case "youtu.be":
             type = "youtube"
             var id = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
@@ -76,7 +77,7 @@ player.play = function (url) {
     }
 };
 
-player.vimeoPlayer = function () {
+player.vimeoPlayer = function (videoId) {
     //create an insert the iframe
     var frame = $("<iframe>").attr("id", "vimeoPlayer").attr("width", 960).attr("height", 540).attr("frameborder", 0).attr("webkitallowfullscreen", "");
     frame.appendTo($("#video-item"));

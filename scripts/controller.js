@@ -1,4 +1,4 @@
-///<reference path="typings/jquery/jquery.d.ts" />
+﻿///<reference path="typings/jquery/jquery.d.ts" />
 
 var csharptube;
 (function (csharptube) {
@@ -87,6 +87,8 @@ var csharptube;
 
         Database.prototype.ShowHome = function () {
             var results = Enumerable.from(videos).reverse().take(30).toArray();
+
+            //skip and take for paging
             this.ClearMain();
             var template = tmpl("homeresults", { Results: results });
             $("#contents").append(template);
@@ -106,6 +108,8 @@ var csharptube;
                 var index = parseInt(result.ref);
                 results.push(videos[index]);
             }
+
+            //skip and take for paging?
             return results;
         };
         return Database;
@@ -132,6 +136,8 @@ var csharptube;
                 video.UrlTitle = video.UrlTitle.replace(/\s+/g, "-").trim().toLowerCase();
                 while (video.UrlTitle.indexOf("--") !== -1)
                     video.UrlTitle = video.UrlTitle.replace("--", "-");
+
+                console.log(video.UrlTitle);
 
                 this._index.add(video);
             }
