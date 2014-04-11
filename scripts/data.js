@@ -1884,7 +1884,7 @@
         "Title": "Compilation as a Service and the next generation plugins with Roslyn and C#",
         "Description": "By using Roslyn and C# we can create very cool plugin systems.\r\n\r\nCheck out my recently self published book on http:--fekberg.com-my-book",
         "Uploader": "Ben Dornis",
-        "Tags": ["roslyn", "aop"],
+        "Tags": ["filip-ekberg", "roslyn", "aop"],
         "Thumbnail": "http://i.ytimg.com/vi/YV3Zbv85vVg/0.jpg",
         "Video": "http://youtube.com/watch?v=YV3Zbv85vVg"
     },
@@ -2176,5 +2176,37 @@
         "Tags": ["parrot", "c0deporn", "mvc"],
         "Thumbnail": "http://i1.ytimg.com/vi/RhBz6gIXyco/0.jpg",
         "Video": "http://youtube.com/watch?v=RhBz6gIXyco"
+    },
+    {
+        "Title": "Xamarin and REST APIs",
+        "Description": "This talk was given at the Brisbane C# Mobile Developers user group on April 9, 2014. It goes into what Xamarin is, how to use a REST API from your applications and what kind of code sharing strategies there are.",
+        "Uploader": "Filip Ekberg",
+        "Tags": ["Xamarin", "REST",     "filip-ekberg"],
+        "Thumbnail": "http://i1.ytimg.com/vi/VfoJCd_TMx0/0.jpg",
+        "Video": "https://www.youtube.com/watch?v=VfoJCd_TMx0"
+    },
+    {
+        "Title": "Xamarin Introduction",
+        "Description": "Do you struggle with cross-platform development? Should we just use html and JavaScript? Should we write once for every platform?\r\n\r\nEnough with that.\r\n\r\nCome along and get an introduction to Xamarin's unique approach on how to solve the headaches of cross-platform development.",
+        "Uploader": "Filip Ekberg",
+        "Tags": ["Xamarin", "filip-ekberg"],
+        "Thumbnail": "http://i1.ytimg.com/vi/fxfqd06ioXg/0.jpg",
+        "Video": "https://www.youtube.com/watch?v=fxfqd06ioXg"
+    },
+    {
+        "Title": "Reliable and fast applications by introducing parallel and asynchronous programming",
+        "Description": "In this session we will be building a bad application from the start and will work on improving it throughout the session - continually making it better and better. We will cover the differences between parallel and asynchronous programming, talk about the tools that help us debug and write this code (Visual Studio 2013) and much more.",
+        "Uploader": "Filip Ekberg",
+        "Tags": ["Async", "Parallel programming", "Async/Await", "filip-ekberg"],
+        "Thumbnail": "http://i1.ytimg.com/vi/cVuvYvqRKeI/0.jpg",
+        "Video": "https://www.youtube.com/watch?v=cVuvYvqRKeI"
+    },
+    {
+        "Title": "Generic Programming in C#",
+        "Description": "I cover some of the basics of generic programming and why it's important to adapt to this way of thinking. I also show how we stored objects in collections in earlier versions of .NET and why this could cause unwanted behavior in our applications.",
+        "Uploader": "Filip Ekberg",
+        "Tags": ["Async", "Parallel programming", "Async/Await", "filip-ekberg"],
+        "Thumbnail": "http://i1.ytimg.com/vi/2LfoxTyWzVM/0.jpg",
+        "Video": "https://www.youtube.com/watch?v=2LfoxTyWzVM"
     }
 ];
